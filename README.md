@@ -26,6 +26,7 @@ One-Time-Pad-Implementation-C/
    - The key must never be reused in whole or in part.
    - The key must be kept completely secret by the communicating parties.
  
-- In the universal/ directory, achieveing a truly random number wasn't possible so I used srand() to generate a random seed using the time() and feed that seed to rand()
+- In the universal/ directory, achieveing a truly random number wasn't possible so I used srand() to generate a random seed using the time() and feed that seed to rand().
+  - That's still a psedorandom number, but the rand() function by default uses the value 1 as the seed to generate random numbers which leads to the generation of the same sequence of random numbers. To prevent this, we can use srand() function to specify a new seed for rand() function.
 - While in the linux/ directory, achieving it was very easy as I used /dev/urandom file
   > It's backed by a CSPRNG that is seeded with entropy (a value that provides randomness) from environmental noise, collected from device drivers and other sources. Users can obtain random numbers from the CSPRNG simply by reading the file.
